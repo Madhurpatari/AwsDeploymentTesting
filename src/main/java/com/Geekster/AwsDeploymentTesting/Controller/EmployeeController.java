@@ -18,6 +18,11 @@ public class EmployeeController {
        return EmployeeRepository.addEmployee(employee);
     }
 
+    @GetMapping("/home")
+    public String welcome(){
+        return "Welcome home..!!";
+    }
+
     @GetMapping
     public List<Employee> getEmployees(){
         return EmployeeRepository.getEmployees();
