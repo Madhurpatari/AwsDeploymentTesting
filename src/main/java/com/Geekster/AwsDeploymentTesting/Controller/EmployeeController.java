@@ -14,8 +14,8 @@ public class EmployeeController {
     private EmployeeRepository employeeRepository;
 
     @PostMapping
-    public String addEmployee(@RequestBody Employee employee){
-       return EmployeeRepository.addEmployee(employee);
+    public Employee addEmployee(@RequestBody Employee employee){
+       return employeeRepository.save(employee);
     }
 
     @GetMapping("/home")
@@ -25,6 +25,7 @@ public class EmployeeController {
 
     @GetMapping
     public List<Employee> getEmployees(){
-        return EmployeeRepository.getEmployees();
+        return employeeRepository.findAll();
+
     }
 }
